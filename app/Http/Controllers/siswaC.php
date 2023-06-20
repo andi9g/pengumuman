@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\siswabaruM;
+use App\Models\pengaturansiswabaruM;
 use Illuminate\Http\Request;
 use App\Imports\SiswaImport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -32,6 +33,8 @@ class siswaC extends Controller
         $jalur_d = siswabaruM::select('jalur')->groupBy('jalur')->get();
 
 
+        $pengaturan = pengaturansiswabaruM::first();
+
         // dd($siswa->toArray());
         return view('layout.tampil', [
             'siswa' => $siswa,
@@ -41,6 +44,7 @@ class siswaC extends Controller
             'keyword' => $keyword,
             'jurusan' => $jurusan,
             'jalur' => $jalur,
+            'pengaturan' => $pengaturan,
         ]);
     }
     // public function index(Request $request)

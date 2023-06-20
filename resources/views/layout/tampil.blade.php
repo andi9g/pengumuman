@@ -114,21 +114,27 @@
             <div class="row">
 
             </div>
-            <!-- /.row -->
-            <!-- Main row -->
+
+            @php
+                $tanggalbuka = $pengaturan->tanggalbuka;
+                $jambuka = $pengaturan->jambuka;
+                $open = strtotime(date('Y-m-d H:i:s', strtotime($tanggalbuka." ".$jambuka)));
+                $sekarang = strtotime(date("Y-m-d H:i:s"));
+            @endphp
+            @if ($sekarang >= $open)
             <div class="row">
-              <!-- Left col -->
               <section class="col-lg-12 connectedSortable">
 
                 <div class="card card-outline card-secondary">
-                  <div class="card-header">
+
+                  <div class="card-header my-0 pb-0">
                     <!-- Button trigger modal -->
 
-                    <form action="" method="get" class="d-inline">
-                        <div class="row">
-                                <div class="col-md-8">
+                    <form action="" method="get" class="d-inline my-0 py-0">
+                        <div class="row my-0 py-0">
+                                <div class="col-md-8 my-0 py-0">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 my-0 py-0">
                                             <div class='form-group'>
                                                 <select name='jurusan' onchange="submit()" id='forjurusan' class='form-control'>
                                                     <option value=''>KESELURUHAN</option>
@@ -141,7 +147,7 @@
                                                 <select>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 my-0 py-0">
                                             <div class='form-group'>
                                                 <select name='jalur' onchange="submit()" id='forjalur' class='form-control'>
                                                     <option value=''>KESELURUHAN</option>
@@ -160,8 +166,8 @@
                                 </div>
 
                             <div class="col-md-4">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" name="keyword" placeholder="Kata kunci" aria-label="Recipient's username" aria-describedby="button-addon2" value="{{$keyword}}">
+                                    <div class="input-group my-0 py-0">
+                                        <input type="text" class="form-control" name="keyword" placeholder="Nama peserta" aria-label="Recipient's username" aria-describedby="button-addon2" value="{{$keyword}}">
                                         <div class="input-group-append">
                                           <button class="btn btn-secondary" type="submit" id="button-addon2">
                                             <i class="fa fa-search"></i>
@@ -175,13 +181,13 @@
 
 
                   </div><!-- /.card-header -->
-                  <div class="card-body ">
+                  <div class="card-body my-0">
                     {{-- {{$siswa}} --}}
 
 
                     <div class="table-responsive">
-                        <table class="table table-hover table-sm table-striped w-100">
-                            <thead>
+                        <table class="table table-hover table-sm table-striped w-100 table-bordered">
+                            <thead class="bg-success">
 
                                 <tr>
                                     <th>No</th>
@@ -193,10 +199,10 @@
                             </thead>
                             @foreach ($siswa as $item)
                             <tr>
-                                <td width="1px">{{$loop->iteration + $siswa->firstItem() - 1}}</td>
-                                <td nowrap>{{$item->nama}}</td>
+                                <td width="1px" class="text-center">{{$loop->iteration + $siswa->firstItem() - 1}}</td>
+                                <td nowrap class="text-bold">{{$item->nama}}</td>
                                 <td>{{($item->jk=="L")?"Laki-laki":"Perempuan"}}</td>
-                                <td>{{$item->jurusan}}</td>
+                                <td class="text-center">{{$item->jurusan}}</td>
                                 <td>{{$item->jalur}}</td>
 
                             </tr>
@@ -230,8 +236,6 @@
 
 
               </section>
-
-
               <section class="col-lg-12 connectedSortable my-0 py-0">
                 <div class="card my-0 py-0" style="background: none;border:none;box-shadow: none">
                     <div class="card-header py-0 my-0" style="background: none;border:none;box-shadow: none">
@@ -240,19 +244,29 @@
                     </div>
                 </div>
               </section>
+            </div>
 
-              <section class="col-lg-12 connectedSortable my-0 py-0 ">
-                <div class="row">
-                    <div class="col-md-12 text-center">
+            @else
 
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-outline card-secondary text-center">
+                        <div class="card-header mb-0 pb-1">
+                            <h3>PEMBERITAHUAN</h3>
+                        </div>
+
+                        <div class="card-body">
+                            <h4>Pengumuman akan dibuka pada:</h4>
+                            <h4><b>
+                                {{\Carbon\Carbon::parse($tanggalbuka)->isoFormat('dddd, DD MMMM Y')}}
+                            </b></h4>
+                            <h2>Pukul : {{date("H:i",strtotime($jambuka))}}</h2>
+                        </div>
                     </div>
                 </div>
-
-
-              </section>
-
-
             </div>
+
+            @endif
             <!-- /.row (main row) -->
         </div>
 
