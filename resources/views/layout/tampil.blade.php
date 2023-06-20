@@ -44,7 +44,7 @@
 
     </ul>
 
-    <marquee behavior="" direction="">SMK NEGERI 1 GUNUNG KIJANG, SISTEM INFORMASI PENGUMUMAN KELULUSAN...</marquee>
+    <marquee behavior="" direction="">SMK NEGERI 1 GUNUNG KIJANG, SISTEM INFORMASI PENGUMUMAN PENERIMAAN PESERTA DIDIK BARU (PPDB)...</marquee>
   </nav>
   <!-- /.navbar -->
 
