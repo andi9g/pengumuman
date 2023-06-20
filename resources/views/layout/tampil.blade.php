@@ -121,7 +121,7 @@
                 $open = strtotime(date('Y-m-d H:i:s', strtotime($tanggalbuka." ".$jambuka)));
                 $sekarang = strtotime(date("Y-m-d H:i:s"));
             @endphp
-            @if ($sekarang <= $open)
+            @if ($sekarang >= $open)
             <div class="row">
               <section class="col-lg-12 connectedSortable">
 
