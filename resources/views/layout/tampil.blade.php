@@ -75,7 +75,7 @@
         <hr>
 
         <a href="">
-            <p>Selamat bagi pendaftar yang telah lulus dan terdaftar pada SMKN 1 Gunung Kijang, pengumuman pendaftaran yang telah diterima dapat dilihat pada sistem informasi ini dan dapat melakukan pencarian berdasarkan nama, jurusan, dan jalur</p>
+            <p>Selamat bagi pendaftar yang telah lulus dan terdaftar pada SMKN 1 Gunung Kijang, pengumuman penerimaan peserta didik baru (PPDB) dapat dilihat pada sistem informasi ini dan dapat melakukan pencarian berdasarkan nama, jurusan, dan jalur</p>
 
 
             <a href="https://www.smkn1gunungkijang.sch.id" class="btn btn-block btn-success">
@@ -121,7 +121,7 @@
                 $open = strtotime(date('Y-m-d H:i:s', strtotime($tanggalbuka." ".$jambuka)));
                 $sekarang = strtotime(date("Y-m-d H:i:s"));
             @endphp
-            @if ($sekarang >= $open)
+            @if ($sekarang <= $open)
             <div class="row">
               <section class="col-lg-12 connectedSortable">
 
