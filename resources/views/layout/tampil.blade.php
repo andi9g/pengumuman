@@ -201,9 +201,9 @@
                             <tr>
                                 <td width="1px" class="text-center">{{$loop->iteration + $siswa->firstItem() - 1}}</td>
                                 <td nowrap class="text-bold">{{$item->nama}}</td>
-                                <td>{{($item->jk=="L")?"Laki-laki":"Perempuan"}}</td>
-                                <td class="text-center">{{$item->jurusan}}</td>
-                                <td>{{$item->jalur}}</td>
+                                <td nowrap>{{($item->jk=="L")?"Laki-laki":"Perempuan"}}</td>
+                                <td nowrap class="text-center">{{$item->jurusan}}</td>
+                                <td nowrap>{{$item->jalur}}</td>
 
                             </tr>
 

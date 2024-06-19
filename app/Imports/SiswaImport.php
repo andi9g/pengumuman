@@ -6,25 +6,24 @@ use App\Models\siswabaruM;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class SiswaImport implements ToCollection
+class SiswaImport implements ToModel, WithHeadingRow
 {
     /**
     * @param array $row
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
-    public function collection(Collection $rows)
+    public function model(array $row)
     {
-        foreach ($rows as $row)
-        {
-            siswabaruM::create([
-                'nama' => $row[2],
-                'jk' => $row[3],
-                'asalsekolah' => $row[4],
-                'jurusan' => $row[5],
-                'jalur' => $row[6],
+
+            return new siswabaruM([
+                'nama' => $row['name'],
+                'jk' => $row['jk'],
+                'asalsekolah' => $row['asalsekolah'],
+                'jurusan' => $row['jurusan'],
+                'jalur' => $row['jalur'],
             ]);
-        }
     }
 }

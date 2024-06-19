@@ -6,6 +6,7 @@ use App\Models\siswabaruM;
 use App\Models\pengaturansiswabaruM;
 use Illuminate\Http\Request;
 use App\Imports\SiswaImport;
+use App\Models\siswaM;
 use Maatwebsite\Excel\Facades\Excel;
 
 class siswaC extends Controller

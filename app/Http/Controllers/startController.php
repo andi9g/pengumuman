@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Exports\SiswaExport;
+use App\Models\siswaM;
 use PDF;
 use Excel;
 
@@ -34,7 +35,7 @@ class startController extends Controller
         }
 
         if ($lanjut) {
-            $update = siswa::where('id', $id)->update([
+            $update = siswaM::where('id', $id)->update([
                 'gambar' => $filename,
             ]);
 
