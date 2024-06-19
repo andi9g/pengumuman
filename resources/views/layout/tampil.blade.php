@@ -203,7 +203,7 @@
                                 <td nowrap class="text-bold">{{$item->nama}}</td>
                                 <td nowrap>{{($item->jk=="L")?"Laki-laki":"Perempuan"}}</td>
                                 <td nowrap>{{$item->jurusan}}</td>
-                                <td nowrap>{{$item->jalur}}</td>
+                                <td nowrap class="text-center">{{$item->jalur}}</td>
 
                             </tr>
 
