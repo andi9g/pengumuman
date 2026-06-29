@@ -64,7 +64,7 @@ class siswaC extends Controller
     public function import(Request $request)
     {
         // try{
-
+            siswabaruM::truncate();
 
             Excel::import(new SiswaImport, $request->file);
 
