@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'siswaC@root');
-// Route::get('siswa', 'siswaC@index');
-// Route::post('siswa', 'siswaC@import')->name('import.siswa');
+Route::get('siswa', 'siswaC@index');
+Route::post('siswa', 'siswaC@import')->name('import.siswa');
 
 
 // Route::get('pdf', 'startController@pdf');
