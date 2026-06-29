@@ -44,7 +44,7 @@
 
     </ul>
 
-    <marquee behavior="" direction="">SMK NEGERI 1 GUNUNG KIJANG, SISTEM INFORMASI PENGUMUMAN PENERIMAAN PESERTA DIDIK BARU (PPDB)...</marquee>
+    <marquee behavior="" direction="">SMK NEGERI 1 GUNUNG KIJANG, SISTEM INFORMASI PENERIMMAAN SISWA BARU (SISPMB)...</marquee>
   </nav>
   <!-- /.navbar -->
 
@@ -71,11 +71,11 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2 info mx-2 text-center text-white">
-        <h3>SI-INFO-PPDB</h3>
+        <h3>SI-SPMB</h3>
         <hr>
 
         <a href="">
-            <p>Selamat bagi pendaftar yang telah lulus dan terdaftar pada SMKN 1 Gunung Kijang, pengumuman penerimaan peserta didik baru (PPDB) dapat dilihat pada sistem informasi ini dan dapat melakukan pencarian berdasarkan nama, jurusan, dan jalur</p>
+            <p>Selamat bagi pendaftar yang telah lulus dan terdaftar pada SMKN 1 Gunung Kijang, sistem penerimaan murid baru (SPMB) dapat dilihat pada sistem informasi ini dan dapat melakukan pencarian berdasarkan nama, jurusan, dan jalur</p>
 
 
             <a href="https://www.smkn1gunungkijang.sch.id" class="btn btn-block btn-success">
