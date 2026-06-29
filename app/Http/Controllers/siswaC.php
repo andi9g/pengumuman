@@ -48,33 +48,33 @@ class siswaC extends Controller
             'pengaturan' => $pengaturan,
         ]);
     }
-    // public function index(Request $request)
-    // {
+    public function index(Request $request)
+    {
 
-    //     $keyword = empty($request->keyword)?"":$request->keyword;
-    //     $siswa = siswabaruM::where('nama', 'like', "%$keyword%")->paginate(20);
-    //     $siswa->appends($request->all());
+        $keyword = empty($request->keyword)?"":$request->keyword;
+        $siswa = siswabaruM::where('nama', 'like', "%$keyword%")->paginate(20);
+        $siswa->appends($request->all());
 
-    //     // dd($siswa->toArray());
-    //     return view('siswa', [
-    //         'siswa' => $siswa,
-    //     ]);
-    // }
+        // dd($siswa->toArray());
+        return view('siswa', [
+            'siswa' => $siswa,
+        ]);
+    }
 
-    // public function import(Request $request)
-    // {
-    //     // try{
-
-
-    //         Excel::import(new SiswaImport, $request->file);
-
-    //         return redirect()->back()->with('success', 'All good!');
+    public function import(Request $request)
+    {
+        // try{
 
 
-    //     // }catch(\Throwable $th){
-    //     //     return redirect()->back()->with('toast_error', 'Terjadi kesalahan');
-    //     // }
-    // }
+            Excel::import(new SiswaImport, $request->file);
+
+            return redirect()->back()->with('success', 'All good!');
+
+
+        // }catch(\Throwable $th){
+        //     return redirect()->back()->with('toast_error', 'Terjadi kesalahan');
+        // }
+    }
 
     /**
      * Show the form for creating a new resource.
