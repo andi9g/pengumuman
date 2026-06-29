@@ -17,7 +17,7 @@ class SiswaImport implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
-            siswabaruM::truncate();
+            siswabaruM::delete();
 
             return new siswabaruM([
                 'nama' => $row['name'],
